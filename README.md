@@ -1,15 +1,17 @@
 ### Date created
-Include the date you created this project and README file.
+This project was created on 13th September 2018.
 
 ### Project Title
-Replace the Project Title
+Explore BikeShare Dataset.
 
 ### Description
-Describe what your project is about and what it does
+The bikeshare project performs exploratory analysis on customer profile and behaviour.
+It focuses on the customers of Chicago, New York City and Washington.  
 
 ### Files used
-Include the files used
+The following files were used as the input data for the analysis:
+chicago.csv, new_your_city.csv and washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+stackoverflow.com was consulted for bugfixes.
 
