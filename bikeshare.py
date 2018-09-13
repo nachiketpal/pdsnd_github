@@ -2,6 +2,7 @@ import time
 import calendar
 import pandas as pd
 import numpy as np
+from math import sqrt
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -29,12 +30,12 @@ def get_filters(name):
         try:
             city_index = int(input())
         except ValueError:
-            print("\nPlease Enter a Valid Option.\n") 
+            print("\nPlease Enter a Valid Option.\n")
             continue
         print("\n")
 
         if  (city_index< 0 or city_index > len(CITY_DATA)):
-            print("Please Enter a Valid Option.\n") 
+            print("Please Enter a Valid Option.\n")
             continue
         else:
             city = list(CITY_DATA.keys())[city_index-1]
@@ -55,7 +56,7 @@ def get_filters(name):
         try:
             month_index = int(input())
         except ValueError:
-            print("\nPlease Enter a Valid Option.\n") 
+            print("\nPlease Enter a Valid Option.\n")
             continue
         print("\n")
 
@@ -79,7 +80,7 @@ def get_filters(name):
         try:
             day_index = int(input())
         except ValueError:
-            print("\nPlease Enter a Valid Option.\n") 
+            print("\nPlease Enter a Valid Option.\n")
             continue
         print("\n")
 
@@ -188,12 +189,12 @@ def station_stats(df):
     if (df['End Station'].mode()[0] == df['Start Station'].mode()[0]):
         print("Looks like {} is a very busy place.\n".\
               format(df['Start Station'].mode()[0]))
-        
+
     # TO DO: display most frequent combination of start station and end station trip
     #Combining The Start And End Stations Separated by a Comma
     df['start end'] = df['Start Station'] +',' +df['End Station']
     start_end_combination = df['start end'].mode()[0].split(',')
-    
+
     print('The Most Frequent Combination of Start And End Station is:\n \
 {} as the Start Station\n \
 and\n \
@@ -231,7 +232,7 @@ def user_stats(df,city):
     # TO DO: Display counts of user types
     print('The Following is the User Count for Different User Types: \n')
     print(df['User Type'].value_counts().to_frame(name='User Count'),'\n')
-    
+
     if city != 'washington':
         # TO DO: Display counts of gender
         print('The Following is the Gender Count the Users: \n')
@@ -271,7 +272,7 @@ def main():
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df,city)
-        user_stats(df,city) 
+        user_stats(df,city)
         while True:
             restart = input('\n{}, Would you like to restart? Enter yes or no.\n'.format(name))
             if type(restart) != str or \
