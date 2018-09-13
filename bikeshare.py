@@ -29,12 +29,12 @@ def get_filters(name):
         try:
             city_index = int(input())
         except ValueError:
-            print("\nPlease Enter a Valid Option.\n")
+            print("\nPlease Enter a Valid Number.\n")
             continue
         print("\n")
 
         if  (city_index< 0 or city_index > len(CITY_DATA)):
-            print("Please Enter a Valid Option.\n")
+            print("Please Enter a Valid Number.\n")
             continue
         else:
             city = list(CITY_DATA.keys())[city_index-1]
@@ -55,7 +55,7 @@ def get_filters(name):
         try:
             month_index = int(input())
         except ValueError:
-            print("\nPlease Enter a Valid Option.\n")
+            print("\nPlease Enter a Valid Number.\n")
             continue
         print("\n")
 
@@ -79,7 +79,7 @@ def get_filters(name):
         try:
             day_index = int(input())
         except ValueError:
-            print("\nPlease Enter a Valid Option.\n")
+            print("\nPlease Enter a Valid Number.\n")
             continue
         print("\n")
 
